@@ -32,3 +32,8 @@ Then Whereis JAVA and
  #ApacheTomcast :8080 #nginx :80 
  
  
+ #Before you install Apache TOmcat you must have java installed 
+ 
+ 
+ 
+ 
