@@ -1,0 +1,34 @@
+ssh app01 to login to app01 server and run below command to download
+sudo curl https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_linux-x64_bin.tar.gz --output /opt/openjdk-13.0.2_linux-x64_bin.tar.gz
+To uncompress run sudo tar -xf /opt/openjdk-13.0.2_linux-x64_bin.tar.gz -C /opt/
+To verify run /opt/jdk-13.0.2/bin/java -version on app01 and confirm correct version is installed
+
+Then Whereis JAVA and
+ export PATH=$PATH:/opt/jdk-13.0.2/bin
+ 
+ #To compile a java file 
+ javac "Filename" ---You have to be in the directory where the app is or add the path to the path variable. 
+ 
+ #To run a compiled application 
+   java "Filename"
+   
+ #To generate a documentation for the app 
+   javadoc -d doc "Filename" 
+   
+#To build a JAva App Install the apache Ant tool 
+   sudo yum/apt install -y ant 
+   
+#Check the ant build conf file and see where the destdir stores the file 
+   
+# Compile and generate jar package using ant
+ ant compile jar 
+ 
+# INstall maven build automation tool
+ sudo yum install -y maven
+ 
+#Please compile and package the application inside /opt/maven/my-app/ with maven 
+ sudo mvn package 
+ 
+ #ApacheTomcast :8080 #nginx :80 
+ 
+ 
