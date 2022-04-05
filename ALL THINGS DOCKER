@@ -1,0 +1,43 @@
+To run docker on a remote host => docker -H=remote-docker-engine:2375  hence to run a nginx remotely ==> docker -H=10.123.2.1:2375 run nginx
+
+Docker uses NAMESPACE - Pid(Process ID), Network, UNIX timesharing, Mount, Interprocess
+                        Whenever a linux system bootsup it start eith a process ID of "1" which is the "Root"
+                        process and kicks of order sub process.   + Run the ps command to see all process runing on the os 
+                        
+A container is lik ea child system of the current system. It thinks that its its own system.  Wich is independent of the mAIN system running 
+on process of its own.     
+
+The host and the containers share the same system resources. However we can use CGROUPS or Control group to restrict the use of the host resources from the 
+containers 
+===============To limit the number of CPU or Memory the container can use you set the variable ==== docker run --cpus=.5 ubuntu or docker run --memory= 100m ubuntu
+
+===How namespaces are used, run a command inside a running containe ps -eaf to see the process id of a paticular command and compare it to that same result erunnig on the host
+
+===> To run a command inside a running cotainer use the command ==> docker exec contaner_id command? [ps -eaf]
+
+
+==> Docker storage and Filesystems <==
+
+Storage directory  : /var/lib/docker/ 
+--Understanding Layered Arhitecture
+-++ The image layers is a read only layer and can only modify them by inniciating a new build 
+                                              it consist of !!!! 1) Base Ubuntu Layer 
+                                                                 2) apt packages 
+                                                                 3) pip packages 
+                                                                 4) source code 
+                                                                 5) Updateentry point with flask cmmand 
+                                                                 {{ docker build Dockerfile -t x/y }
+                                                                 
+ To run a container you must get the images from which you run your container wither from the store or registry. 
+ 
+The life of the container layer leaves only as long as the container lives. 
+COPY ON WRITE - It a mechanism where by an immage is duplicated and move to the container layer hence can be modified in the container layer 
+
+To persist a data. ==> we add a volume by the command ==> docker create data_volume {{ create a volume called data_volume file in the /var/lib/docker dir }}
+------++++>>> To mount a volume to a container ad the "v" tag {{ docker run -v data_volume:/var/lib/mysql mysql }} [docker will automatically create a volume even if we didnt create ] 
+
+types of mount + volume mount and bind mount { mount the data to any location on the container } 
+                    bind mount formula + docker run --mount type=bind,source=/data/mysql,target=/var/lib/mysql  mysql 
+                    
+                    
+Docker uses storage driver they are responsible for layered at=rchitiecture++  = AUFS > Ubuntu  Device Mapper                     
