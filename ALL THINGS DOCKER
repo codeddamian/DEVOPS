@@ -47,3 +47,16 @@ docker run -d --name=clickcounter --link containername:contanierimage -p host:co
 
 +++++++============================================DOCKER SWARM=======================================================++++++++++++++++++++++++++++++++++++
 Docker SWARM ==> Helps to distribute the contanier into different host for higher avialability and to balance load accros didfferent services and hardware 
+To avoid a single point of failure ==> docker swarm distributes the services into different continers and ensuring fault tollerant. 
+To set up docker swarm 
+   - Host with docker insallled 
+   - designated one ofthe host to be the swarm manage and others as the slave 
+   - the nyou run the docker swarm init command on the the swarm manager to inintilize 
+   - the out of the previous commandwill give the command for the slave node 
+   
+   - Manaager node ++> 
+   = responsible for the workers ===> having a signle manager node is not advice becuase that wont acheieve HA. 
+   = Problem of distrubuted concescus  caused by an inconsistent state due to a swarm manager going off without informing the other managers 
+   - WIth the raft concensus algorithm- uses random timers,  
+   
+   Quorum is the minim number of manager to have + 
