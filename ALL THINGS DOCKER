@@ -40,4 +40,10 @@ types of mount + volume mount and bind mount { mount the data to any location on
                     bind mount formula + docker run --mount type=bind,source=/data/mysql,target=/var/lib/mysql  mysql 
                     
                     
-Docker uses storage driver they are responsible for layered at=rchitiecture++  = AUFS > Ubuntu  Device Mapper                     
+Docker uses storage driver they are responsible for layered at=rchitiecture++  = AUFS > Ubuntu  Device Mapper     
+-
+To link a container to an existing container ===> 
+docker run -d --name=clickcounter --link containername:contanierimage -p host:containerport kodekloud/click-counter
+
++++++++============================================DOCKER SWARM=======================================================++++++++++++++++++++++++++++++++++++
+Docker SWARM ==> Helps to distribute the contanier into different host for higher avialability and to balance load accros didfferent services and hardware 
