@@ -1,0 +1,23 @@
+--
+- name: Unzip a file
+  hosts: stapp*
+  become: yes
+  tasks:
+    - name: Create an archive  of the zip file in /opt/finance directory
+      unarchive:
+        src: /usr/src/finance/datacenter.zip
+        dest: /opt/finance/
+        owner: '{{ ansible_user }}'
+        group: '{{ ansible_user }}'
+        mode: '0744'
+~                                                                                                     
+~                                                                                                     
+~                                                                                                     
+~                                                                                                     
+~                                                                                                     
+~                                                                                                     
+~                                                                                                     
+~                                                                                                     
+~                                                                                                     
+~                                                                                                     
+~                               
