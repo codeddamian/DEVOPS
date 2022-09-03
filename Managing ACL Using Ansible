@@ -64,4 +64,5 @@ Vi or nano Playbook.yml or yml file.
         permissions: rw
         state: present
         
-        Close the file and run the valifation 
+        Close the file and run the validation
+        Additional reading: https://docs.ansible.com/ansible/latest/collections/ansible/posix/acl_module.html
