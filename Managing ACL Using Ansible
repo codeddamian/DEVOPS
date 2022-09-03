@@ -66,3 +66,4 @@ Vi or nano Playbook.yml or yml file.
         
         Close the file and run the validation
         Additional reading: https://docs.ansible.com/ansible/latest/collections/ansible/posix/acl_module.html
+                            https://opensource.com/article/19/5/manage-access-control-lists-ansible
