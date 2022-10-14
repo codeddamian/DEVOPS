@@ -5,7 +5,7 @@
 
 
 
-###### Puppet server and agent nodes are already have required packages, but you may need to start puppetserver (on master) and puppet service on both nodes.
+##### Puppet server and agent nodes are already have required packages, but you may need to start puppetserver (on master) and puppet service on both  ##### nodes.
 
 ##### Assign and sign certificates for both master and agent node.
 
