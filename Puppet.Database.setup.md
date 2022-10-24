@@ -17,5 +17,29 @@ Finally grant some usual permissions like select, update (or full) ect to this n
 
 Solution 
 
+---
 Puppet file 
+
+class mysql_database {
+    package {'mariadb-server':
+      ensure => installed 
+    }
+ service {'mariadb':
+      ensure  => ruuning,
+      enable  =>  true
+      }
+ mysql::db { 'kodekloud_db10':
+   user       =>  'kodekloud_aim',
+   password   =>  'ksH85UJjhb',
+   host       =>  'localhost',
+   grant      =>  ['ALL'];
+ }
+   
+}
+
+node 'stdb01.stratos.xfusioncorp.com' {
+   include mysql_database
+}   
+  
+---
 
