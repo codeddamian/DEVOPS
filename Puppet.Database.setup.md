@@ -17,6 +17,7 @@ Finally grant some usual permissions like select, update (or full) ect to this n
 
 Solution 
 
+```
 ---
 Puppet file 
 
@@ -43,3 +44,9 @@ node 'stdb01.stratos.xfusioncorp.com' {
   
 ---
 
+```
+
+After entering the puppet file, you need to valider it with the command, *Puppet paser validate filename* 
+Go to the stdserver and check the puppet agent - puppet agent -tv 
+After which you check for the status of the mariadb. and loggin to the database with command 
+db command: mysql -u dbname -p datab
